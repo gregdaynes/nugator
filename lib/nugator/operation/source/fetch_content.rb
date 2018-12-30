@@ -4,7 +4,7 @@ require 'rss'
 module Nugator
   module Operation
     module Source
-      class Fetch
+      class FetchContent
         def call(url)
           results = fetch_from_url(url)
           RSS::Parser.parse(results, false).items

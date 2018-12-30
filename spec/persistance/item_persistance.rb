@@ -1,5 +1,6 @@
 require 'yaml'
 require 'time'
+require 'securerandom'
 
 module Persistance
   class Item
@@ -9,9 +10,23 @@ module Persistance
       @data = YAML.load_file(File.join(__dir__, 'yaml/items.yml'))
     end
 
+    def create(item)
+      item.id = SecureRandom.uuid
+      item_hash = Hash[item.to_h.collect { |k, v| [k.to_s, v] }]
+
+      data << item_hash
+
+      item_hash
+    end
+
     def get_items_by_ids(ids)
       results = ids.map do |id|
-        item = data[id]
+        item = data.find do |i|
+          next if i.nil?
+
+          i['id'] == id
+        end
+
         OpenStruct.new(item) unless item.nil?
       end
 

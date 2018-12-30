@@ -2,7 +2,7 @@ require 'spec_helper'
 
 require 'nugator'
 
-RSpec.describe Nugator::Operation::Source::Fetch do
+RSpec.describe Nugator::Operation::Source::FetchContent do
   let(:instance) { described_class.new }
   let(:url) { 'http://www.golfchannel.com/rss/124552/feed.xml' }
 

@@ -9,12 +9,13 @@ module Nugator
     end
 
     namespace(:interactor) do
-      register(:fetch_source) { Object.const_get('Nugator::Interactor::FetchSource').new }
+      register(:fetch_source) { Object.const_get('Nugator::Interactor::FetchSourceContent').new }
+      register(:fetch_item) { Object.const_get('Nugator::Interactor::FetchItem').new }
     end
 
     namespace(:operation) do
       namespace(:source) do
-        register(:fetch) { Object.const_get('Nugator::Operation::Source::Fetch').new }
+        register(:fetch) { Object.const_get('Nugator::Operation::Source::FetchContent').new }
         register(:parse_item) { Object.const_get('Nugator::Operation::Source::ParseItem').new }
       end
     end
