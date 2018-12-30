@@ -1,11 +1,12 @@
 require 'bundler/setup'
-require 'nugator'
 require 'pry'
 
 if ENV['COVERAGE']
   require 'simplecov'
   SimpleCov.start
 end
+
+require 'nugator'
 
 RSpec.configure do |config|
   # enable flags like ---only-failures and --next-failure
