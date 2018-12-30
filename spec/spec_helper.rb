@@ -1,6 +1,8 @@
 require 'bundler/setup'
 require 'pry'
 
+require_relative 'persistance'
+
 if ENV['COVERAGE']
   require 'simplecov'
   SimpleCov.start
