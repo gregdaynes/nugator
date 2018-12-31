@@ -18,6 +18,10 @@ module Nugator
         register(:fetch) { Object.const_get('Nugator::Operation::Source::FetchContent').new }
         register(:parse_item) { Object.const_get('Nugator::Operation::Source::ParseItem').new }
       end
+
+      namespace(:item) do
+        register(:validate_request) { Object.const_get('Nugator::Operation::Item::ValidateRequest').new }
+      end
     end
   end
 
