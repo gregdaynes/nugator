@@ -5,7 +5,6 @@ module Nugator
     extend Dry::Container::Mixin
 
     namespace(:repository) do
-      register(:item) { Class.new }
     end
 
     namespace(:interactor) do
