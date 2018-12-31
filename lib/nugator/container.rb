@@ -22,6 +22,7 @@ module Nugator
       namespace(:item) do
         register(:validate_request) { Object.const_get('Nugator::Operation::Item::ValidateRequest').new }
         register(:fetch_item) { Object.const_get('Nugator::Operation::Item::FetchItem').new }
+        register(:filter_content) { Object.const_get('Nugator::Operation::Item::FilterContent').new }
       end
     end
   end
