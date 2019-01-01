@@ -35,7 +35,6 @@ module Nugator
                                              tags: tags)
         end
 
-        # TODO move this to an operation
         def handle_reversed_date_range
           return unless since && before
 
