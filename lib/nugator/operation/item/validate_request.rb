@@ -10,7 +10,6 @@ module Nugator
           @before = options[:before]
           @since  = options[:since]
           @tags   = options[:tags]
-          @show_content = options[:content]
 
           validate_ids_request
           validate_count_request

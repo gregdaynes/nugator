@@ -6,19 +6,38 @@ RSpec.describe Nugator::Operation::Item::ValidateRequest do
   let(:instance) { described_class.new }
 
   let(:id) { nil }
+  let(:count) { nil }
+  let(:before) { nil }
+  let(:since) { nil }
+  let(:tags) { nil }
   let(:request) do
-    {
-      id: id,
-      content: false,
-      count: nil,
-      before: nil,
-      since: nil
-    }
+    { id: id, count: count, before: before, since: since, tags: tags }
   end
 
   subject { instance.call(request) }
 
-  xit 'with valid params'
+  context 'with valid params' do
+    it 'does not raise with id' do
+      request[:id] = [1]
+
+      expect(subject).to be nil
+    end
+
+    it 'does not raise with ids' do
+      request[:id] = [1, 2]
+
+      expect(subject).to be nil
+    end
+
+    it 'does not raise with all params except id' do
+      request[:count] = 10
+      request[:since] = Time.parse('2000-01-01 00:00:00 UTC')
+      request[:before] = Time.parse('2000-01-10 00:00:00 UTC')
+      request[:tags] = %w[test_one, test_two]
+
+      expect(subject).to be nil
+    end
+  end
 
   context 'with invalid params' do
     let(:id) { [1] }
