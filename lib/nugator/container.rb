@@ -16,6 +16,7 @@ module Nugator
       namespace(:source) do
         register(:fetch) { Object.const_get('Nugator::Operation::Source::FetchContent').new }
         register(:parse_item) { Object.const_get('Nugator::Operation::Source::ParseItem').new }
+        register(:validate) { Object.const_get('Nugator::Operation::Source::Validate').new }
       end
 
       namespace(:item) do
