@@ -5,7 +5,10 @@ require_relative 'persistance'
 
 if ENV['COVERAGE']
   require 'simplecov'
-  SimpleCov.start
+
+  SimpleCov.start do
+    add_filter "/spec/"
+  end
 end
 
 require 'nugator'
