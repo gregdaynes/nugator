@@ -10,6 +10,7 @@ module Nugator
     namespace(:interactor) do
       register(:fetch_source) { Object.const_get('Nugator::Interactor::FetchSourceContent').new }
       register(:fetch_item) { Object.const_get('Nugator::Interactor::FetchItem').new }
+      register(:create_source) { Object.const_get('Nugator::Interactor::CreateSource').new }
     end
 
     namespace(:operation) do
