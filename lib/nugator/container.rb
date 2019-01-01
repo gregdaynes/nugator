@@ -18,6 +18,7 @@ module Nugator
         register(:parse_item) { Object.const_get('Nugator::Operation::Source::ParseItem').new }
         register(:validate) { Object.const_get('Nugator::Operation::Source::Validate').new }
         register(:construct) { Object.const_get('Nugator::Operation::Source::Construct').new }
+        register(:store) { Object.const_get('Nugator::Operation::Source::Store').new }
       end
 
       namespace(:item) do
