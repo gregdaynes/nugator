@@ -38,4 +38,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'dry-auto_inject'
   spec.add_dependency 'dry-container'
   spec.add_dependency 'dry-struct'
+  spec.add_dependency 'ibm_watson', '~> 0.10.0'
 end
