@@ -27,6 +27,10 @@ module Nugator
         register(:fetch_item) { Object.const_get('Nugator::Operation::Item::FetchItem').new }
         register(:filter_content) { Object.const_get('Nugator::Operation::Item::FilterContent').new }
       end
+
+      namespace(:intelligence) do
+        register(:service) { Object.const_get('Nugator::Operation::Intelligence::Watson').new }
+      end
     end
   end
 
