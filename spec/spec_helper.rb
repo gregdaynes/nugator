@@ -2,6 +2,7 @@ require 'bundler/setup'
 require 'pry'
 
 require_relative 'persistance'
+require_relative 'services'
 
 if ENV['COVERAGE']
   require 'simplecov'
