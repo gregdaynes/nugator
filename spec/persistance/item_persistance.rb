@@ -109,6 +109,11 @@ module Persistance
           item_tags = item['tags']
           next if item_tags.nil?
           next if item_tags == false
+
+          if item_tags.class == Hash
+            item_tags = item_tags.values.flatten
+          end
+
           next if (item_tags & tags).empty?
         end
 

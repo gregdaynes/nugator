@@ -116,7 +116,7 @@ RSpec.describe Nugator::Operation::Item::FetchItem do
       it 'returns items' do
         request[:before] = Time.parse('2000-01-02 00:00:00 UTC')
 
-        expect(subject.count).to be 2
+        expect(subject.count).to be 3
       end
 
       it 'does not return items after date' do
