@@ -1,10 +1,7 @@
 require "nugator/version"
 
 require 'nugator/container'
-require 'nugator/operation'
-require 'nugator/interactor'
-require 'nugator/error'
 
-module Nugator
-  # Your code goes here...
-end
+require 'nugator/source/source'
+require 'nugator/item/item'
+require 'nugator/natural_language_processor/natural_language_processor'

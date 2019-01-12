@@ -8,32 +8,32 @@ module Nugator
     end
 
     namespace(:interactor) do
-      register(:fetch_source) { Object.const_get('Nugator::Interactor::FetchSourceContent').new }
-      register(:fetch_item) { Object.const_get('Nugator::Interactor::FetchItem').new }
-      register(:create_source) { Object.const_get('Nugator::Interactor::CreateSource').new }
+      register(:fetch_source) { Object.const_get('Source::Interactor::FetchSourceContent').new }
+      register(:fetch_item) { Object.const_get('Item::Interactor::FetchItem').new }
+      register(:create_source) { Object.const_get('Source::Interactor::CreateSource').new }
 
-      namespace(:intelligence) do
-        register(:analysis) { Object.const_get('Nugator::Interactor::Inelligence::Anaylsis').new }
+      namespace(:natural_language_processor) do
+        register(:text_analysis) { Object.const_get('NaturalLanguageProcessor::Interactor::TextAnaylsis').new }
       end
     end
 
     namespace(:operation) do
       namespace(:source) do
-        register(:fetch) { Object.const_get('Nugator::Operation::Source::FetchContent').new }
-        register(:parse_item) { Object.const_get('Nugator::Operation::Source::ParseItem').new }
-        register(:validate) { Object.const_get('Nugator::Operation::Source::Validate').new }
-        register(:construct) { Object.const_get('Nugator::Operation::Source::Construct').new }
-        register(:store) { Object.const_get('Nugator::Operation::Source::Store').new }
+        register(:fetch) { Object.const_get('Source::Operation::FetchContent').new }
+        register(:parse_item) { Object.const_get('Source::Operation::ParseItem').new }
+        register(:validate) { Object.const_get('Source::Operation::Validate').new }
+        register(:construct) { Object.const_get('Source::Operation::Construct').new }
+        register(:store) { Object.const_get('Source::Operation::Store').new }
       end
 
       namespace(:item) do
-        register(:validate_request) { Object.const_get('Nugator::Operation::Item::ValidateRequest').new }
-        register(:fetch_item) { Object.const_get('Nugator::Operation::Item::FetchItem').new }
-        register(:filter_content) { Object.const_get('Nugator::Operation::Item::FilterContent').new }
+        register(:validate_request) { Object.const_get('Item::Operation::ValidateRequest').new }
+        register(:fetch_item) { Object.const_get('Item::Operation::FetchItem').new }
+        register(:filter_content) { Object.const_get('Item::Operation::FilterContent').new }
       end
 
-      namespace(:intelligence) do
-        register(:service) { Object.const_get('Nugator::Operation::Intelligence::Watson').new }
+      namespace(:natural_language_processor) do
+        register(:service) { Object.const_get('NaturalLanguageProcessor::Operation::Watson').new }
       end
     end
   end
